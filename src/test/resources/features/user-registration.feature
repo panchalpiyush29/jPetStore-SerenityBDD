@@ -1,3 +1,4 @@
+@registration
 Feature: User Registration to the pet-store application
 
   Scenario: As a shopper, I need to register myself as a new user to the pet-store application

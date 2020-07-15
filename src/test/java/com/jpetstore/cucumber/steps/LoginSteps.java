@@ -6,14 +6,20 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public class LoginSteps {
+public class LoginSteps extends ScenarioSteps {
 
     @Steps
     PetStoreSteps shopper;
+
+    @Managed
+    WebDriver driver;
 
     /*
      * Login Step definations

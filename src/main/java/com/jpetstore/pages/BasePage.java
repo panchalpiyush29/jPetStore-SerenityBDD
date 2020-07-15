@@ -3,6 +3,7 @@ package com.jpetstore.pages;
 import com.jpetstore.utils.PetCategories;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
+
 public class BasePage extends PageObject {
 
     private static final String ENTER_THE_STORE_LINK = "//a[@href='actions/Catalog.action']";
@@ -42,18 +43,27 @@ public class BasePage extends PageObject {
      *
      * @return
      */
+
+
     public LoginPage navigateToSignOnPage() {
 
+        navigateToJPetStore();
+
+        if ((!$(SIGN_IN_LINK).isVisible())) {
+            $(SIGN_OUT_LINK).click();
+        }
+        $(SIGN_IN_LINK).click();
+
+        return this.switchToPage(LoginPage.class);
+
+    }
+
+    private void navigateToJPetStore() {
         open();
 
         waitForTextToAppear("Welcome to JPetStore 6");
 
         waitFor(ENTER_THE_STORE_LINK).$(ENTER_THE_STORE_LINK).click();
-
-        waitFor(SIGN_IN_LINK).$(SIGN_IN_LINK).click();
-
-        return this.switchToPage(LoginPage.class);
-
     }
 
     /**

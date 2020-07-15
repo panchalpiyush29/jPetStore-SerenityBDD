@@ -9,8 +9,10 @@ import com.jpetstore.pages.OrdersPage;
 import com.jpetstore.pages.ProductsPage;
 import com.jpetstore.utils.PetCategories;
 
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.WebDriver;
 
 public class PetStoreSteps extends ScenarioSteps {
 
@@ -28,8 +30,7 @@ public class PetStoreSteps extends ScenarioSteps {
 	 * 
 	 *************************************************************************************************
 	 *************************************************************************************************/
-	
-	
+
 	@Step("Signing out from the store")
 	public DashBoardPage signOut() {
 
