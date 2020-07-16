@@ -26,6 +26,8 @@ Navigate to http://localhost:8080/jpetstore/
 *Run a specific cucumber tag
 >clean verify serenity:aggregate -Denvironment=dev "-Dcucumber.options=--tags @registration --tags ~@manual src/test/resources/features"
 
+*Run on saucelabs
+>clean verify serenity:aggregate -Denvironment=prod -Dsaucelabs.urlhttp://<username>:<access-key>@ondemand.saucelabs.com:80/wd/hub -Dsaucelabs.access.key=<access-key> -Dsaucelabs.user.id=<username>
 
 ##How to Configure
 Check the serenity.conf and serenity.properties files
